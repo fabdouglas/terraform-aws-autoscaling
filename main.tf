@@ -14,7 +14,7 @@ resource "aws_launch_configuration" "this" {
   user_data                   = "${var.user_data}"
   enable_monitoring           = "${var.enable_monitoring}"
   spot_price                  = "${var.spot_price}"
-  placement_tenancy           = "${var.placement_tenancy}"
+  # placement_tenancy           = "${var.placement_tenancy}"
   ebs_optimized               = "${var.ebs_optimized}"
   ebs_block_device            = "${var.ebs_block_device}"
   ephemeral_block_device      = "${var.ephemeral_block_device}"
