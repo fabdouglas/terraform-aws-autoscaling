@@ -55,19 +55,3 @@ output "this_autoscaling_group_health_check_type" {
   value       = "${element(concat(aws_autoscaling_group.this.*.health_check_type, list("")), 0)}"
 }
 
-//output "this_autoscaling_group_vpc_zone_identifier" {
-//  description = "The VPC zone identifier"
-//  value       = "${element(concat(aws_autoscaling_group.this.vpc_zone_identifier, list("")), 0)}"
-//}
-//
-//output "this_autoscaling_group_load_balancers" {
-//  description = "The load balancer names associated with the autoscaling group"
-//  value       = "${aws_autoscaling_group.this.load_balancers}"
-//}
-//
-output "this_autoscaling_group_target_group_arns" {
-  description = "List of Target Group ARNs that apply to this AutoScaling Group"
-  value       = "${join(",", aws_autoscaling_group.this.*.target_group_arns)}"
-}
-
-
