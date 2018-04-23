@@ -65,8 +65,9 @@ output "this_autoscaling_group_health_check_type" {
 //  value       = "${aws_autoscaling_group.this.load_balancers}"
 //}
 //
-//output "this_autoscaling_group_target_group_arns" {
-//  description = "List of Target Group ARNs that apply to this AutoScaling Group"
-//  value       = "${aws_autoscaling_group.this.target_group_arns}"
-//}
+output "this_autoscaling_group_target_group_arns" {
+  description = "List of Target Group ARNs that apply to this AutoScaling Group"
+  value       = "${join(",", aws_autoscaling_group.this.*.target_group_arns)}"
+}
+
 
